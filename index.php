@@ -34,6 +34,7 @@ echo 'The color of the car is ' . $car->getColor() . '.', PHP_EOL;
 echo 'The car has ' . $car->getSeatsNumber() . ' seats.', PHP_EOL;
 echo 'The fuel for this car is ' . $car->getEnergy() . '.', PHP_EOL;
 echo $car->getEnergyLevel(), PHP_EOL;
+
 ?> <br/><br/> <?php
 
 
