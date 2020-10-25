@@ -3,6 +3,7 @@
 require_once 'Bicycle.php';
 require_once 'Car.php';
 require_once 'Truck.php';
+require_once 'MotorWay.php';
 
 $bike = new Bicycle("blue", 1);
 $car = new Car("red", 5, "diesel");
@@ -48,5 +49,12 @@ $monster = new Truck('white', '3', 500, 200, 'fuel'); ?>
 <?php echo $monster->isFull();
 $monster->setLoad(500); ?> <br/>
 <?= $monster->isFull(); ?> <br/>
-<?= $monster->getLoad(); ?> <br/>
-<?php
+<?= $monster->getLoad(); ?> <br/><?php
+
+// -----Highway-----
+
+$highway = new MotorWay();
+
+var_dump($highway);
+$highway->addVehicle($bike);
+var_dump($highway);
