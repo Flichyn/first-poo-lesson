@@ -63,7 +63,7 @@ class Car extends Vehicle
                 throw new Exception('You have to unset the park brake.');
             }
         } catch(Exception $exceptionMessage) {
-
+            return $exceptionMessage->getMessage();
         } finally {
             return 'My car rolls like a donut !';
         }
