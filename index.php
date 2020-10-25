@@ -25,9 +25,9 @@ echo $bike->brake();
 
 // -----Moving Car-----
 
+echo $car->start(), PHP_EOL;
 echo $car->forward(), PHP_EOL;
 echo $car->brake(), PHP_EOL;
-echo $car->start(), PHP_EOL;
 
 $car->setWheelsNumber(4);
 echo 'The car has ' . $car->getWheelsNumber() . ' wheels.', PHP_EOL;

@@ -1,6 +1,7 @@
 <?php
 
 require_once 'Vehicle.php';
+
 class Car extends Vehicle
 {
     const ALLOWED_ENERGIES = ['fuel', 'electric'];
@@ -14,6 +15,11 @@ class Car extends Vehicle
      * @var integer
      */
     private $energyLevel;
+
+    /**
+     * @var bool
+     */
+    private $hasParkBrake = true;
 
 
     public function __construct(string $color, int $seatsNumber, string $energy)
@@ -45,8 +51,20 @@ class Car extends Vehicle
         $this->energyLevel = $energyLevel;
     }
 
+    public function setParkBrake(bool $boolean)
+    {
+        $this->hasParkBrake = $boolean;
+    }
+
     public function start()
     {
+        try {
+            if ($this->hasParkBrake = true) {
+                throw new Exception('You have to unset the park brake.');
+            }
+        } catch(Exception $exceptionMessage) {
+
+        }
         return 'The engine is on !';
     }
 }
