@@ -9,6 +9,12 @@ abstract class HighWay
 
     private int $maxSpeed = 130;
 
+    public function __construct (int $numberLanes, int $maxSpeed)
+    {
+        $this->numberLanes = $numberLanes;
+        $this->maxSpeed = $maxSpeed;
+    }
+
     public function getCurrentVehicles()
     {
         return $this->currentVehicles;
@@ -34,5 +40,5 @@ abstract class HighWay
         $this->maxSpeed = $number;
     }
 
-    abstract public function addVehicle(Vehicle $newVehicle);
+    abstract protected function addVehicle(Vehicle $newVehicle);
 }
