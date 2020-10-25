@@ -64,7 +64,8 @@ class Car extends Vehicle
             }
         } catch(Exception $exceptionMessage) {
 
+        } finally {
+            return 'My car rolls like a donut !';
         }
-        return 'The engine is on !';
     }
 }
