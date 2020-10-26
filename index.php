@@ -20,11 +20,11 @@ echo $bike->brake();
 echo '<br> Vitesse du vélo : ' . $bike->getCurrentSpeed() . ' km/h' . '<br>';
 echo $bike->brake();
 ?>
-<br/><br/><?php
+    <br/><br/><?php
 
 
 // -----Moving Car-----
-
+echo $car->setParkBrake(false);
 echo $car->start(), PHP_EOL;
 echo $car->forward(), PHP_EOL;
 echo $car->brake(), PHP_EOL;
@@ -75,3 +75,13 @@ echo $a10->addVehicle($bike); ?> <br/>
 <?= $road->getNumberLanes(); ?> <br/>
 <?= $road->getMaxSpeed(); ?> <br/>
 <?= $road->addVehicle($monster); ?> <br/><br/>
+
+<?php
+try {
+    echo $car->start();
+} catch (Exception $exceptionMessage) {
+    echo $exceptionMessage->getMessage();
+    $car->setParkBrake(false);
+} finally {
+    echo 'My car rolls like a donut !';
+}

@@ -58,14 +58,9 @@ class Car extends Vehicle
 
     public function start()
     {
-        try {
-            if ($this->hasParkBrake = true) {
-                throw new Exception('You have to unset the park brake.');
-            }
-        } catch(Exception $exceptionMessage) {
-            return $exceptionMessage->getMessage();
-        } finally {
-            return 'My car rolls like a donut !';
+        if ($this->hasParkBrake === true) {
+            throw new Exception('You have to unset the park brake.');
         }
+        return 'My car rolls like a donut !';
     }
 }
