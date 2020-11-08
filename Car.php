@@ -2,7 +2,7 @@
 
 require_once 'Vehicle.php';
 
-class Car extends Vehicle
+class Car extends Vehicle implements LightableInterface
 {
     const ALLOWED_ENERGIES = ['fuel', 'electric'];
 
@@ -62,5 +62,15 @@ class Car extends Vehicle
             throw new Exception('You have to unset the park brake.');
         }
         return 'My car rolls like a donut !';
+    }
+
+    public function switchOn(): bool
+    {
+        return true;
+    }
+
+    public function switchOff(): bool
+    {
+        return false;
     }
 }
